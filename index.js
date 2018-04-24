@@ -1,3 +1,5 @@
+const repoIssues = 'https://api.github.com/repos/ary770/javascript-fetch-lab/issues';
+
 function getIssues() {
 }
 
