@@ -10,12 +10,20 @@ function createIssue() {
 }
 
 function showResults(json) {
-  $("results").append(`<a href=${json.svn_url}>${json.svon_url}</a>`)
+  $("results").append(`<a href=${json.svn_url}>${json.svon_url}</a>`);
 }
 
 function forkRepo() {
   const repo = 'learn-co-curriculum/javascript-fetch-lab'
   //use fetch to fork it!
+  const token = getToken();
+
+  fetch(`https://api.github.com/repos/${repo}/forks`, {
+    method: 'post',
+    headers: {
+      Authorization: `token ${token}`
+    }
+  }).then(res => res.json(res)).then(json => showForkedRepo(json));
 }
 
 function getToken() {
