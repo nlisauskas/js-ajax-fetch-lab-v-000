@@ -5,6 +5,9 @@ function getIssues() {
 }
 
 function showIssues(json) {
+  const issuesList = '<ul>' + json.map(issue => `<li>Tittle: ${issue.title}</li><li>Body: ${issue.body}</li></br>`).join('') + '</ul>'
+
+$("#issues").append(issuesList);
 }
 
 function createIssue() {
