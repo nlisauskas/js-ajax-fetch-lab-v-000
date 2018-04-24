@@ -1,6 +1,7 @@
 const repoIssues = 'https://api.github.com/repos/nlisauskas/javascript-fetch-lab/issues';
 
 function getIssues() {
+   fetch(repoIssues).then(res => res.json()).then(json => showIssues(json));
 }
 
 function showIssues(json) {
