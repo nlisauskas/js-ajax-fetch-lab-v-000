@@ -10,6 +10,7 @@ function createIssue() {
 }
 
 function showResults(json) {
+  $("results").append(`<a href=${json.svn_url}>${json.svon_url}</a>`)
 }
 
 function forkRepo() {
