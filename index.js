@@ -11,6 +11,12 @@ $("#issues").append(issuesList);
 }
 
 function createIssue() {
+  const title = document.getElementById('title').value;
+const body = document.getElementById('body').value;
+
+const postData = {
+  'title': title,
+  'body': body
 }
 
 function showResults(json) {
